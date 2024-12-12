@@ -24,7 +24,7 @@ def handle_webhook():
         try:
             submission_id = submission.get("id")
             full_name = submission.get("answers").get("1", {}).get("answer", "Unknown")
-            cursor.execute("INSERT INTO Table1 (ID, FullName) VALUES (?, ?)", (submission_id, full_name))
+            cursor.execute("INSERT INTO Table1 (ID, fullName) VALUES (?, ?)", (submission_id, full_name))
         except Exception as e:
             print(f"Error inserting record: {e}")
 
